@@ -135,7 +135,7 @@ sudo /usr/sbin/kadmin.local -q "ktadd -k /etc/security/keytabs/{client-keytabnam
 <p>In the <code>pulsar_jaas.conf</code> file above</p>
 <ol>
 <li><code>PulsarBroker</code> 是 JAAS 文件中一种每个 Broker 都会使用的组名（ section name ）。 此组会告知 Broker 要去使用 Kerberos 中的哪个 principal 并存储了 principal 的 keytab 位置信息。 <code>PulsarBroker</code> 允许 Broker 使用本组中指定的 keytab。</li>
-<li><code>PulsarBroker</code> 是 JAAS 文件中一种每个 Broker 都会使用的组名（ section name ）。 此组会告知 Broker 要去使用 Kerberos 中的哪个 principal 并存储了 principal 的 keytab 位置信息。 <code>PulsarBroker</code> 允许 Broker 使用本组中指定的 keytab。 下面的示例在 Pulsar 内部管理配置和 <code>bin/pulsar-client</code> 、 <code>bin/pulsar-perf</code> 与 <code>bin/pulsar-admin</code> 的 CLI （命令行）指令中也都重用了这个 <code>PulsarClient</code> 部分。 您还可以为不同的用例添加单独的组。</li>
+<li><code>PulsarClient</code> 是 JAAS 文件中一种每个 Broker 都会使用的组名（ section name ）。 此组会告知 client要去使用 Kerberos 中的哪个 principal 并存储了 principal 的 keytab 位置信息。 <code>PulsarClient</code> 允许 client使用本组中指定的 keytab。 下面的示例在 Pulsar 内部管理配置和 <code>bin/pulsar-client</code> 、 <code>bin/pulsar-perf</code> 与 <code>bin/pulsar-admin</code> 的 CLI （命令行）指令中也都重用了这个 <code>PulsarClient</code> 部分。 您还可以为不同的用例添加单独的组。</li>
 </ol>
 <p>您可以有两个独立的 JAAS 配置文件：</p>
 <ul>
@@ -148,7 +148,7 @@ sudo /usr/sbin/kadmin.local -q "ktadd -k /etc/security/keytabs/{client-keytabnam
 <ul>
 <li>Set <code>authenticationEnabled</code> to <code>true</code>;</li>
 <li>Set <code>authenticationProviders</code> to choose <code>AuthenticationProviderSasl</code>;</li>
-<li>设置 <code>saslJaasClientAlleedIds</code> 正则表达式，用于 principal 的 broker 连接许可；</li>
+<li>设置 <code>saslJaasClientAllowedIds</code> 正则表达式，用于 principal 的 broker 连接许可；</li>
 <li>设置 <code>saslJaasBrokerSectionName</code> ，对应于 broker JAAS 配置文件中的组名；</li>
 </ul>
 <p>要使 Pulsar 内部管理客户端正常工作，您需要在 <code>broker.conf</code> 文件中配置如下：</p>

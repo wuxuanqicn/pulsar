@@ -148,7 +148,7 @@ sudo /usr/sbin/kadmin.local -q "ktadd -k /etc/security/keytabs/{client-keytabnam
 <ul>
 <li><p>Set <code>authenticationEnabled</code> to <code>true</code>;</p></li>
 <li><p>Set <code>authenticationProviders</code> to choose <code>AuthenticationProviderSasl</code>;</p></li>
-<li><p>设置 <code>saslJaasClientAlleedIds</code> 正则表达式，用于 principal 的 broker 连接许可；</p></li>
+<li><p>设置 <code>saslJaasClientAllowedIds</code> 正则表达式，用于 principal 的 broker 连接许可；</p></li>
 <li><p>Set <code>saslJaasBrokerSectionName</code> that corresponding to the section in JAAS configuration file for broker;</p>
 <p>要使 Pulsar 内部管理客户端正常工作，您需要在 <code>broker.conf</code> 文件中配置如下：</p></li>
 <li><p>为客户端插件 <code>AuthenticationSasl</code> 设置 <code>brokerClientAuthenticationPlugin</code> ；</p></li>

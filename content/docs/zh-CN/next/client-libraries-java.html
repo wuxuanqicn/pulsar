@@ -476,6 +476,7 @@ client.close();
         .enableBatching(<span class="hljs-keyword">false</span>)
         .create();
 </code></pre>
+<p>By default, producer chunks the large message based on max message size (<code>maxMessageSize</code>) configured at broker (eg: 5MB). However, client can also configure max chunked size using producer configuration <code>chunkMaxMessageSize</code>.</p>
 <blockquote>
 <p><strong>Note:</strong> To enable chunking, you need to disable batching (<code>enableBatching</code>=<code>false</code>) concurrently.</p>
 </blockquote>
