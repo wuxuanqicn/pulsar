@@ -165,7 +165,7 @@
 <blockquote>
 <p>성능 및 내결함성을 위해 원하는 만큼 Pulsar proxy 인스턴스를 실행 할 수 있습니다.</p>
 </blockquote>
-<p>구조적으로 Pulsar proxy는 ZooKeeper에서 필요한 모든 정보를 얻습니다. 시스템에서 프록시를 시작할 때, 각 인스턴스 클러스터와 전체 구성 저장소 클러스터에 ZooKeeper 연결 문자열만 제공하면 됩니다. Here's an example:</p>
+<p>구조적으로 Pulsar proxy는 ZooKeeper에서 필요한 모든 정보를 얻습니다. When starting the proxy on a machine, you only need to provide metadata store connection strings for the cluster-specific and instance-wide configuration store clusters. Here's an example:</p>
 <pre><code class="hljs css language-bash">$ <span class="hljs-built_in">cd</span> /path/to/pulsar/directory
 $ bin/pulsar proxy \
   --metadata-store zk:my-zk-1:2181,my-zk-2:2181,my-zk-3:2181 \

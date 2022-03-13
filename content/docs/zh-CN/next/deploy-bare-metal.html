@@ -288,8 +288,8 @@ $ <span class="hljs-built_in">echo</span> 1 &gt; data/zookeeper/myid
 </thead>
 <tbody>
 <tr><td style="text-align:left"><code>--cluster</code></td><td style="text-align:left">集群名字</td></tr>
-<tr><td style="text-align:left"><code>--zookeeper</code></td><td style="text-align:left">ZooKeeper集群的“本地”连接字符串。 该连接字符串只需包含ZooKeeper集群<em>任一台</em>机器。</td></tr>
-<tr><td style="text-align:left"><code>--configuration-store</code></td><td style="text-align:left">整个集群实例的配置存储连接字符串。 和<code>--zookeeper</code>标记一样，该连接字符串只需包含ZooKeeper集群中的<em>任一台</em>机器即可。</td></tr>
+<tr><td style="text-align:left"><code>--metadata-store</code></td><td style="text-align:left">A &quot;local&quot; metadata store connection string for the cluster. This connection string only needs to include <em>one</em> machine in the ZooKeeper cluster.</td></tr>
+<tr><td style="text-align:left"><code>--configuration-metadata-store</code></td><td style="text-align:left">The configuration metadata store connection string for the entire instance. As with the <code>--metadata-store</code> flag, this connection string only needs to include <em>one</em> machine in the ZooKeeper cluster.</td></tr>
 <tr><td style="text-align:left"><code>--web-service-url</code></td><td style="text-align:left">集群 web 服务的URL以及端口，这个URL应该是标准的DNS名称，默认的端口是8080(我们不建议使用其他端口)</td></tr>
 <tr><td style="text-align:left"><code>--web-service-url-tls</code></td><td style="text-align:left">如果使用<a href="/docs/zh-CN/next/security-tls-transport">TLS</a>，你必须为集群指定一个 TLS web 服务URL。默认端口是8443(我们不建议使用其他端口)</td></tr>
 <tr><td style="text-align:left"><code>--broker-service-url</code></td><td style="text-align:left">Broker服务的URL，用于与集群中的brokers进行交互。 这个 URL 不应该使用和 web 服务 URL 同样的 DNS名称，而应该是用<code>pulsar</code>方案。 默认端口是6650(我们不建议使用其他端口)。</td></tr>
